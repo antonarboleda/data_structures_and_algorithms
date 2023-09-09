@@ -9,39 +9,6 @@
 # You may not modify the values in the list's nodes. Only nodes themselves 
 # may be changed.
 """
-0 > 1 > 2 > 3 > 5
-0 > 5 > 1 > 3 > 2
-1 start both at dummy -> odd number of characters you lose the head of 2nd list
-slow at root, fast at dummy - . works for even. Doesn't work
-fast at root, slow at dummy - 
-D>0>1>2>3>4>None
-          f
-    s
-D>0>1>2>3>None
-        p f
-    s
-dummynode > root
- s
-  0>1>2>3
-          f
-    s
-0 > 1 > 2
-5 > 3
-
-0 > 1 > 2
-split into two lists
-0 > 1 > 2
-        f
-    s
-use dummy node
-advance fast and slow pointer:
-if fast pointer is not null
-    advance slow pointer because we're not yet at the middle of the two
-
-fast will be head of 2nd list after reversing
-reverse fast
-merge fast and root
-return
 ------ Session Notes
 This was a failed interview for sure. 
 I fumbled over several things
@@ -59,15 +26,6 @@ class Node:
     def __init__(self, val: int):
         self.val = val
         self.next = None
-# D<1<2>3
-    #  cur      nxt
-        #   cur
-# cur nxt
-# tmp = nxt.next
-# cur = nxt
-# nxt = nxt.next
-# D<1<2
-#     p c
 def reverse_list(l):
     old_root = l
     prev, cur = Node(-1), l
@@ -80,14 +38,7 @@ def reverse_list(l):
     old_root.next = None
     return prev
 
-# 1>2>3
-# 4>5
 
-# 1>2>3
-# 4>5
-# dh 
-# cur = l1 
-# l1, l2 = 1, 4 
 def merge_two_lists(l1, l2):
     # l1 is longer
     dummy_head = cur = Node(-1)

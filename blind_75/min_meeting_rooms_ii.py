@@ -39,11 +39,9 @@ as we go through each meeting
     heappushpop endtimes heap, we can re-use the room with the earliest 
     end time
 
-[[2,5],[3,4],[7,10],[8, 11]]
-                 i
-end_times = [10,11]
 
-N Log N
+Time: O(N Log N)
+Space: O(N)
 """
 from typing import List
 from heapq import heapify, heappush, heappushpop
@@ -72,17 +70,3 @@ assert meeting_rooms([[1,5],[8,9],[8,9]]) == 2
 
 
 print("tests passed!")
-
-
-
-- Requirements 5 mins
-    - Functional [5 reqs]
-    - Non Functional [3 reqs]
-- Apis/ Requests/ Data Models[7 mins]
-    - Don’t forget your protocols in the API conversation.
-    - Don’t forget the API methods,
-    - Talk about traffic considerations by endpoint, stratify endpoints by traffic and data type. If we supported live streams for instance, web hooks would be better compared to https.
-- Estimates [5mins, Generate Read/ Write Throughput]
-- Schemas [5 mins]
-- High Level Design [7 mins]
-- Deep Dive [15-20 mins]

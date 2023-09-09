@@ -51,12 +51,14 @@ alphanumeric? uppercase vs lowercase
 
 Pseudocode
 
-encode
+def encode
 for each character add it to another list 
    prefix each word with len(word) + delimeter + word
-join the list
+return the joined list
 
-decode
+example encoded string5#Hello10#HelloHello
+
+def decode
 init two pointers at start of string
 iterate through string
 if we run into delimiter #
@@ -64,9 +66,7 @@ get substring from s[i:j]
 cast to int, then move pointers to next length 
 i,j
 5#Hello10#HelloHello
-  j    i
-         j    
-i:j
+
 ---------- Info about the practice session 
 Start Time: 6:30pm
 6:43 psuedocoding
@@ -103,13 +103,10 @@ class Encoder:
             i = j
         return decoded_words
 
-def test():
+
+if __name__ == "__main__":
     encoder = Encoder()
     words = [["Hello", "World"], [""], ["####"]]
     for word_list in words:
-        assert encoder.decode(encoder.encode(word_list)) == word_list
-
-
-if __name__ == "__main__":
-    test()
+        assert encoder.decode(encoder.encode(word_list)) == word_list    
     print("passed!")

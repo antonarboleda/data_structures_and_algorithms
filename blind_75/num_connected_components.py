@@ -56,10 +56,3 @@ assert num_connected_components(5, [[0,1],[1,2],[3,4]]) == 2
 assert num_connected_components(5, [[0,1],[1,2],[2,3],[3,4]]) == 1
 assert num_connected_components(5, []) == 5
 assert num_connected_components(2, [[1,0]]) == 1
-
-
-    
-
-
-   
-    
