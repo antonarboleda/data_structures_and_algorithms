@@ -80,10 +80,3 @@ assert min_knight_moves(2,2) == 4
 assert min_knight_moves(5,5) == 4
 assert min_knight_moves_dfs(5,5) == 4
 print("passed")
-# [
-#     [X,X,X,X,X,X]
-#     [X,X,X,X,X,X]
-#     [X,X,O,X,X,X]
-#     [X,X,X,X,X,X]
-#     [X,X,X,X,X,X]
-# ]
