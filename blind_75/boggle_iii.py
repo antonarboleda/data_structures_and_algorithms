@@ -55,6 +55,7 @@ def boggle(dictionary, boggle):
     for word in dictionary:
         root.add_word(word)
     result = []
+
     for row in range(n):
         for col in range(m):
             char = boggle[row][col]
