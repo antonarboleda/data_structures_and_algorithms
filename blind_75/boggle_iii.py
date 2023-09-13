@@ -14,7 +14,7 @@ Pre Calculation of insertion into a Trie
 The time complexity is O(NM) where N is the length of the dictionary 
 and M is the length of the longest word
 
-Space complexity is O(N!) where N is the number of characters we allow in 
+Space complexity is O(26^N) where N is the number of characters we allow in 
 the dictionary. I.e. if we only allow alphabetical chars, it's 26! size nodes
 
 Searching using a Trie and the Boggle Board
