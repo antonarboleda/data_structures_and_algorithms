@@ -9,7 +9,8 @@ def sliding_window_longest_flexible(input):
         while invalid(window):
             remove input[left] from window
             left += 1
-        ans = max(ans, window)
+        
+        ans = min(ans, right - left + 1) # window is guaranteed to be valid here
     return ans
 
 # In the shortest flexible window, we find a 
@@ -23,7 +24,7 @@ def sliding_window_shortest_flexible(input):
     for right in range(len(input)):
         add right to window
         while valid(window):
+            ans = min(ans, right - left + 1) # window is guaranteed to be valid here
             remove input[left] from window
             left += 1
-        ans = max(ans, window)
     return ans
