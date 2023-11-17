@@ -1,7 +1,23 @@
 from collections import deque
 from collections import defaultdict
 from typing import List
+"""
+Topo sort using BFS
+graph = create graph with data input
 
+get_indegrees_from_graph(graph)
+
+for each indegree that is equal to 0, 
+    add it to a queue
+while q
+    popleft form q
+    do something with the node like add to a list or something
+    get all neighbors via the graph
+        subtract an indegree from the neighbor
+        if the indegree == 0
+            add it to the q because it's ready to be processed
+
+"""
 class BuildNode:
     def __init__(self, dependencies, val):
         self.dependencies = dependencies
@@ -29,6 +45,12 @@ root = BuildNode(
         BuildNode([], "c"), BuildNode([BuildNode([], "f")], "b")
     ], "a")
 print(get_indegrees_from_nodes(root))
+def get_indegrees_from_graph(graph):
+    indegrees = {node: 0 for node in graph}
+    for node in graph:
+        for neighbor in graph[node]:
+            indegrees[neighbor] += 1
+    return indegrees
 def get_dep_graph_from_node(root):
     graph = {}
     queue = deque([root])
